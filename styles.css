@@ -1,3 +1,35 @@
 body {
   background-color: #60d9f1;
 }
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 2px solid purple;
+}
+
+.resultsArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.song {
+  width: 19%;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: steelblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img{
+  height: 102px;
+  width: 102px;
+}
