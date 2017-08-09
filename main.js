@@ -21,6 +21,15 @@ let searchTermLocation = document.querySelector("#searchField")
 let arrayOfSongs =[];
 let searchButt = document.querySelector("#submitButton")
 searchButt.addEventListener("click", searching);
+let songLocation = document.querySelector(".music-player");
+
+document.querySelector(".resultsArea").addEventListener("click", function (bananapants) {
+  songLocation.src = bananapants.target.value;
+  songLocation.autoplay = "true";
+
+  // some stuff here.
+});
+
 
 function  builtTheArray(data){
 resultsArea.innerHTML = "";
@@ -32,9 +41,9 @@ for (var i = 0; i < arrayOfSongs.results.length; i++) {
   <img src="${arrayOfSongs.results[i].artworkUrl100}">
   <a href="${arrayOfSongs.results[i].trackViewUrl}"><h3>${arrayOfSongs.results[i].trackName}</h3></a>
   <p>${arrayOfSongs.results[i].artistName}</p>
-  <button type="button" name="Button${i}" id="Button${i}">Play a sample!</button>
+  <button type="button" name="Button${i}" id="Button${i}" value=${arrayOfSongs.results[i].previewUrl}>Play a sample!</button>
 </div>
   `
-  
+
 }
 }
