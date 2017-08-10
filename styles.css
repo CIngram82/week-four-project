@@ -9,12 +9,22 @@ header {
 
 .player {
   display: flex;
-  justify-content: center;
-  padding: 20px;
-  border-bottom: 2px solid purple;
+  justify-content: space-around;
+  align-content: space-around;
+  top: 0px;
+  position: sticky;
 }
-audio{
-  width: 500px;
+
+.search{
+  border-top: 2px solid purple;
+}
+#music-player{
+
+}
+#video-player{
+  height: 200px;
+  width: 300px;
+  background-color: black;
 }
 .resultsArea {
   display: flex;

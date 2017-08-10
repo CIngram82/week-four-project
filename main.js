@@ -22,12 +22,16 @@ let arrayOfSongs =[];
 let searchButt = document.querySelector("#submitButton")
 searchButt.addEventListener("click", searching);
 let songLocation = document.querySelector(".music-player");
+let videoLocation = document.querySelector(".video-player");
 
-document.querySelector(".resultsArea").addEventListener("click", function (bananapants) {
+document.querySelector(".resultsArea").addEventListener("click", function (bananapants){
+  if (bananapants.target.value.slice(-3) === "m4v") {
+    videoLocation.src = bananapants.target.value;
+      videoLocation.autoplay = "true";
+  } else if (bananapants.target.value.slice(-3) === "m4a") {
   songLocation.src = bananapants.target.value;
   songLocation.autoplay = "true";
-
-  // some stuff here.
+}
 });
 
 
