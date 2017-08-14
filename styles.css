@@ -1,47 +1,64 @@
 body {
-  background-color: #60d9f1;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(91, 192, 235, 1);
 }
 
 header {
   display: flex;
   justify-content: center;
+  background-color: rgba(91, 192, 235, 1);
 }
 
-.player {
-  display: flex;
-  justify-content: flex-end;
-  right: 15px;
-  top: 15px;
+.players{
   position: sticky;
+  top: 15px;
+  display: flex;
+  flex-direction: row-reverse;
 }
-
 .search {
-  border-top: 2px solid purple;
+  border-top: 3px solid rgba(229, 89, 52, 1);
+  padding-top: 15px;
 }
 
-#music-player {
-  width: 300px;
+#video-player , #music-player, label, input , button{
   display: none;
 }
-
-#video-player {
+body.songs #music-player, body.podcasts #music-player {
+  width: 300px;
+  display: inline-block;
+}
+body.songs input, body.videos input, body.podcast input{
+display: inline-block;
+}
+body.songs label.songs{
+  display: inline-block;
+}
+body.videos label.videos{
+  display: inline-block;
+}
+body.podcasts label.podcasts{
+  display: inline-block;
+}
+body.videos #video-player {
   height: 200px;
   width: 300px;
   background-color: black;
-  display: none;
+  display: inline-block;
+
 }
 
-.resultsArea {
+#resultsArea {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
 .song {
-  width: 19%;
+  width: 18%;
   padding: 5px;
   margin: 5px 0;
-  background-color: steelblue;
+  background-color: rgba(250, 121, 33, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,3 +68,35 @@ img {
   height: 102px;
   width: 102px;
 }
+
+.songs {
+  background-color: rgba(253, 231, 76, 1);
+}
+
+.videos {
+  background-color: rgba(155, 197, 61, 1);
+}
+
+.podcasts {
+  background-color: rgba(250, 121, 33, 1);
+}
+
+.tabs{
+  background-color: rgba(91, 192, 235, 1);
+}
+.tabs h3 {
+  margin: 0;
+  width: 150px;
+  font-size: 2em;
+  display: inline-block;
+  text-align: center;
+  color: rgba(229, 89, 52, 1);;
+  border-radius: 15px 15px 0 0;
+}
+/* RGB
+BackGround: rgba(91, 192, 235, 1);
+Songs: rgba(253, 231, 76, 1);
+Video: rgba(155, 197, 61, 1);
+color4: rgba(229, 89, 52, 1);
+Other: rgba(250, 121, 33, 1);
+*/
