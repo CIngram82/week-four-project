@@ -1,33 +1,58 @@
 let resultsArea = document.querySelector("#resultsArea");
-let searchTermLocation = document.querySelector("#searchField")
+let searchTermLocation = document.querySelector("#searchField");
 let arrayOfSongs = [];
-let searchButt = document.querySelector("#submitButton")
+let searchButt = document.querySelector("#submitButton");
 searchButt.addEventListener("click", searching);
 let songLocation = document.querySelector("#music-player");
 let videoLocation = document.querySelector("#video-player");
 let tabArea = document.querySelector(".tabs");
 let bodyArea = document.querySelector("body");
 tabArea.addEventListener("click", tabChange);
-
+let allLables = document.getElementsByTagName('label');
+let allSongClass = document.getElementsByClassName('songs');
+let allMovieClass = document.getElementsByClassName('videos');
+let allPodcastClass = document.getElementsByClassName('podcasts');
 function convertFromJson(results) {
   return results.json()
 }
 
-
 function searching() {
-  fetch(`https://itunes.apple.com/search?term=${searchTermLocation.value}`)
+  console.log(`https://itunes.apple.com/search?term=${searchTermLocation.value}&entity=${searchTermLocation.dataset.type}`);
+  fetch(`https://itunes.apple.com/search?term=${searchTermLocation.value}&entity=${searchTermLocation.dataset.type}`)
     .then(convertFromJson)
     .then(builtTheArray)
 }
 function tabChange(tabClicked){
   console.log(tabClicked.target.id);
+  for (var i = 0; i < allLables.length; i++) {
+    allLables[i].classList += " hidden";
+  }
+  searchButt.classList += " hidden";
+  searchTermLocation.classList += " hidden";
+  songLocation.classList += " hidden";
+  videoLocation.classList += " hidden";
   if (tabClicked.target.id === "songTab") {
+    searchTermLocation.dataset.type = "song";
+    for (var i = 0; i < allLables.length; i++) {
+      allSongClass[i].classList.toggle("hidden");
+    }
+    
     bodyArea.className = "songs";
   }else if (tabClicked.target.id === "videoTab") {
-      bodyArea.className = "videos";
+    searchTermLocation.dataset.type = "movie";
+    for (var i = 0; i < allMovieClass.length; i++) {
+      allMovieClass[i].classList.toggle("hidden");
+    }
+    bodyArea.className = "videos";
   }else if (tabClicked.target.id === "podcastTab") {
+    searchTermLocation.dataset.type = "podcast";
+    for (var i = 0; i < allPodcastClass.length; i++) {
+      allPodcastClass[i].classList.toggle("hidden");
+    }
     bodyArea.className = "podcasts";
   }
+  searchButt.classList.toggle("hidden");
+  searchTermLocation.classList.toggle("hidden");
 }
 
 resultsArea.addEventListener("click", function(bananapants) {

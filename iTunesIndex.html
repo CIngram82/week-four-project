@@ -19,16 +19,16 @@
     <section id="songSection">
       <section id="search">
         <form class="search-form">
-          <label class="songs" for="searchField">Search by song or artist:</label>
-          <label class="videos" for="searchField">Search by movie or show:</label>
-          <label class="podcasts" for="searchField">Search by podcast or host:</label>
-          <input type="text" name="" value="" id="searchField">
-          <button type="button" name="button" id="submitButton">Search!</button>
+          <label class="songs hidden" for="searchField">Search by song or artist:</label><!-- show when song tab clicked -->
+          <label class="videos hidden" for="searchField">Search by movie or show:</label><!-- show when movie tab clicked -->
+          <label class="podcasts hidden" for="searchField">Search by podcast or host:</label><!-- show when podcast tab clicked -->
+          <input class="hidden" type="text" id="searchField" data-type="podcast"><!-- show when any tab clicked -->
+          <button class="hidden" type="button" name="button" id="submitButton">Search!</button><!-- show when any tab clicked -->
         </form>
       </section>
       <section id="players">
-        <audio class="player" id="music-player" controls="controls" src="" autoplay="false"></audio>
-        <video class="player" id="video-player" controls="controls" src="" autoplay="false"></video>
+        <audio class="player songs podcasts hidden" id="music-player" controls="controls" src="" autoplay="false"></audio><!-- show when song or podcast tab clicked -->
+        <video class="player videos hidden" id="video-player" controls="controls" src="" autoplay="false"></video><!-- show when video tab clicked -->
       </section>
       <section id="resultsArea">
       </section>

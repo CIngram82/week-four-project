@@ -20,40 +20,29 @@ header {
   border-top: 3px solid rgba(229, 89, 52, 1);
   padding-top: 15px;
 }
-
-#video-player , #music-player, label, input , button{
-  display: none;
+.hidden{
+  display:none;
 }
-body.songs #music-player, body.podcasts #music-player {
-  width: 300px;
-  display: inline-block;
-}
-body.songs input, body.videos input, body.podcast input{
-display: inline-block;
-}
-body.songs label.songs{
-  display: inline-block;
-}
-body.videos label.videos{
-  display: inline-block;
-}
-body.podcasts label.podcasts{
-  display: inline-block;
-}
-body.videos #video-player {
-  height: 200px;
-  width: 300px;
-  background-color: black;
-  display: inline-block;
-
-}
-
 #resultsArea {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
+body.songs{
+  background-image: url("images/songs.jpeg");
+  background-size:  cover;
+  background-size: auto contain;
+}
+body.videos{
+  background-image: url("images/moves.jpeg");
+  background-size:  cover;
+  background-size: auto contain;
+}
+body.podcasts{
+  background-image: url("images/podcasts.jpeg");
+  background-size:  cover;
+  background-size: auto contain;
+}
 .song {
   width: 18%;
   padding: 5px;
@@ -83,6 +72,9 @@ img {
 
 .tabs{
   background-color: rgba(91, 192, 235, 1);
+}
+#video-player{
+  background-color: black;
 }
 .tabs h3 {
   margin: 0;
